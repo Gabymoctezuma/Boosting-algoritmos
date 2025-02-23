@@ -4,10 +4,10 @@ import streamlit as st
 import requests
 from pickle import load
 import numpy as np
+import os
 
-
-model = load(open("/workspaces/Boosting-algoritmos/models/xgbregressor_42.sav", "rb"))
-
+ruta_modelo = os.path.join(os.path.dirname(__file__), "../models/xgbregressor_42.sav")
+model = load(open(ruta_modelo, "rb"))
 
 # Configuración de página
 st.set_page_config(page_title="Predicción de Diabetes", page_icon="🏥", layout="wide")
